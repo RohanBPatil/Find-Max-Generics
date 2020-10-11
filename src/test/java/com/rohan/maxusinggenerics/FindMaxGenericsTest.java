@@ -18,7 +18,7 @@ class FindMaxGenericsTest {
 		Integer first = 9;
 		Integer second = 5;
 		Integer third = 7;
-		assertEquals(first, findMaxGenerics.maxNumInt(first, second, third));
+		assertEquals(first, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -26,7 +26,7 @@ class FindMaxGenericsTest {
 		Integer first = 9;
 		Integer second = 10;
 		Integer third = 7;
-		assertEquals(second, findMaxGenerics.maxNumInt(first, second, third));
+		assertEquals(second, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -34,7 +34,7 @@ class FindMaxGenericsTest {
 		Integer first = 9;
 		Integer second = 5;
 		Integer third = 10;
-		assertEquals(third, findMaxGenerics.maxNumInt(first, second, third));
+		assertEquals(third, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -42,7 +42,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 5.4f;
 		Float third = 7.1f;
-		assertEquals(first, findMaxGenerics.maxNumFloat(first, second, third));
+		assertEquals(first, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -50,7 +50,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 10.4f;
 		Float third = 7.1f;
-		assertEquals(second, findMaxGenerics.maxNumFloat(first, second, third));
+		assertEquals(second, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -58,7 +58,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 5.4f;
 		Float third = 10.3f;
-		assertEquals(third, findMaxGenerics.maxNumFloat(first, second, third));
+		assertEquals(third, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -66,7 +66,7 @@ class FindMaxGenericsTest {
 		String first = "peach";
 		String second = "banana";
 		String third = "apple";
-		assertEquals(first, findMaxGenerics.maxNumString(first, second, third));
+		assertEquals(first, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -74,7 +74,7 @@ class FindMaxGenericsTest {
 		String first = "banana";
 		String second = "peach";
 		String third = "apple";
-		assertEquals(second, findMaxGenerics.maxNumString(first, second, third));
+		assertEquals(second, findMaxGenerics.findMax(first, second, third));
 	}
 
 	@Test
@@ -82,6 +82,6 @@ class FindMaxGenericsTest {
 		String first = "banana";
 		String second = "apple";
 		String third = "peach";
-		assertEquals(third, findMaxGenerics.maxNumString(first, second, third));
+		assertEquals(third, findMaxGenerics.findMax(first, second, third));
 	}
 }
