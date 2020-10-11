@@ -1,21 +1,45 @@
 package com.rohan.maxusinggenerics;
 
-public class FindMaxGenerics {
+public class FindMaxGenerics<x extends Comparable<x>> {
+	x first, second, third;
+
+	/**
+	 * Constructor
+	 * 
+	 * @param first
+	 * @param second
+	 * @param third
+	 */
+	public FindMaxGenerics(x first, x second, x third) {
+		this.first = first;
+		this.second = second;
+		this.third = third;
+	}
+
+	/**
+	 * UC 3 refactoring to use generic class
+	 * 
+	 * @return
+	 */
+	public x testMaximum() {
+		return testMaximum(first, second, third);
+	}
 
 	/**
 	 * UC 3 refactoring to use generic method
+	 * 
 	 * @param <E>
 	 * @param first
 	 * @param second
 	 * @param third
 	 * @return
 	 */
-	public <E extends Comparable<E>> E findMax(E first, E second, E third) {
-		if (first.compareTo(second) > 0 && first.compareTo(third) > 0)
-			return first;
-		else if (second.compareTo(first) > 0 && second.compareTo(third) > 0)
-			return second;
+	private static <E extends Comparable<E>> E testMaximum(E firstVar, E secondVar, E thirdVar) {
+		if (firstVar.compareTo(secondVar) > 0 && firstVar.compareTo(thirdVar) > 0)
+			return firstVar;
+		else if (secondVar.compareTo(firstVar) > 0 && secondVar.compareTo(thirdVar) > 0)
+			return secondVar;
 		else
-			return third;
+			return thirdVar;
 	}
 }

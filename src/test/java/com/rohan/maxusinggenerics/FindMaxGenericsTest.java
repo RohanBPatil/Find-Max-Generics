@@ -2,23 +2,16 @@ package com.rohan.maxusinggenerics;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class FindMaxGenericsTest {
-	public static FindMaxGenerics findMaxGenerics;
-
-	@BeforeAll
-	public static void initiate() {
-		findMaxGenerics = new FindMaxGenerics();
-	}
 
 	@Test
 	public void givenFirstMaxInt_shouldReturn_first() {
 		Integer first = 9;
 		Integer second = 5;
 		Integer third = 7;
-		assertEquals(first, findMaxGenerics.findMax(first, second, third));
+		assertEquals(first, new FindMaxGenerics<Integer>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -26,7 +19,7 @@ class FindMaxGenericsTest {
 		Integer first = 9;
 		Integer second = 10;
 		Integer third = 7;
-		assertEquals(second, findMaxGenerics.findMax(first, second, third));
+		assertEquals(second, new FindMaxGenerics<Integer>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -34,7 +27,7 @@ class FindMaxGenericsTest {
 		Integer first = 9;
 		Integer second = 5;
 		Integer third = 10;
-		assertEquals(third, findMaxGenerics.findMax(first, second, third));
+		assertEquals(third, new FindMaxGenerics<Integer>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -42,7 +35,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 5.4f;
 		Float third = 7.1f;
-		assertEquals(first, findMaxGenerics.findMax(first, second, third));
+		assertEquals(first, new FindMaxGenerics<Float>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -50,7 +43,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 10.4f;
 		Float third = 7.1f;
-		assertEquals(second, findMaxGenerics.findMax(first, second, third));
+		assertEquals(second, new FindMaxGenerics<Float>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -58,7 +51,7 @@ class FindMaxGenericsTest {
 		Float first = 9.5f;
 		Float second = 5.4f;
 		Float third = 10.3f;
-		assertEquals(third, findMaxGenerics.findMax(first, second, third));
+		assertEquals(third, new FindMaxGenerics<Float>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -66,7 +59,7 @@ class FindMaxGenericsTest {
 		String first = "peach";
 		String second = "banana";
 		String third = "apple";
-		assertEquals(first, findMaxGenerics.findMax(first, second, third));
+		assertEquals(first, new FindMaxGenerics<String>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -74,7 +67,7 @@ class FindMaxGenericsTest {
 		String first = "banana";
 		String second = "peach";
 		String third = "apple";
-		assertEquals(second, findMaxGenerics.findMax(first, second, third));
+		assertEquals(second, new FindMaxGenerics<String>(first, second, third).testMaximum());
 	}
 
 	@Test
@@ -82,6 +75,6 @@ class FindMaxGenericsTest {
 		String first = "banana";
 		String second = "apple";
 		String third = "peach";
-		assertEquals(third, findMaxGenerics.findMax(first, second, third));
+		assertEquals(third, new FindMaxGenerics<String>(first, second, third).testMaximum());
 	}
 }
